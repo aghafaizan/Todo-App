@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 12</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(214, 214, 214);
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            width: 70%;
+        }
+
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 15px;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blueviolet;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 20px;
+            max-width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 12px;
+            margin-left: -10px;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 100% !important;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 4px #333;
+            margin-top: 10px;
+        }
+
+        li:hover {
+            background-color: #d1d1d1;
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Todo List</h1>
+
+    <input type="text" id="inputText" placeholder="Enter Your Task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList">
+
+    </ul>
+    <script>
+        function addTask() {
+
+            //1st Get Value From Input Box and Save in Var
+            var inputText = document.getElementById("inputText").value;
+
+
+            //6th Don't Add Empty Values inside Todo List
+            if (inputText === "") {
+                alert("Enter Any Text to Work");
+                return;
+            }
+
+            //2nd Create a Li 
+            var li = document.createElement("li");
+
+            //3rd Inter Input Box Value in Newly Created (li) Tag
+            li.innerText = inputText;
+
+            //Remove Li item on Click
+            li.onclick = function () {
+                li.remove();
+            }
+
+
+            //4th Add Li with Value inside Ul via Get Element By Id
+
+            document.getElementById("taskList").appendChild(li);
+
+            //5th Make Input Box Empty after Button Click
+            document.getElementById("inputText").value = "";
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+    </script>
+
+
+</body>
+
+</html>
